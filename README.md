@@ -46,4 +46,7 @@ vector_original = vector;
 
 <div align="center">
 <img width="70%" src="img/diagrama2.svg">
+    <ul>
+        <li>Prueba
+    </ul>
 </div>
