@@ -2,7 +2,19 @@
 <img width="32px" src="img/algo2.svg">
 </div>
 
+## TP0: Valentin Calomino - 109665 - vcalomino@fi.uba.ar
 
+- Para compilar y correr las pruebas con valgrind:
+
+```bash
+make
+```
+
+- Solamente compilar las pruebas:
+
+```bash
+make pruebas_chanutron
+```
 <div align="center">
     <h2 align="left">Cambios realizados:</h2>
     <ul>
