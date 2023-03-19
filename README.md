@@ -2,7 +2,7 @@
 <img width="32px" src="img/algo2.svg">
 </div>
 
-## TP0: (Nombre Apellido) - (Padrón) - (Mail)
+## TP0: Valentin Calomino - 109665 - vcalomino@fi.uba.ar
 
 - Para compilar y correr las pruebas con valgrind:
 
@@ -15,35 +15,21 @@ make
 ```bash
 make pruebas_chanutron
 ```
-
----
-##  Funcionamiento
-
-Explicación de cómo funcionan las estructuras desarrolladas en el TP y el funcionamiento general del mismo.
-
-Aclarar en esta parte todas las decisiones que se tomaron al realizar el TP, cosas que no se aclaren en el enunciado, fragmentos de código que necesiten explicación extra, etc.
-
-Incluír **EN TODOS LOS TPS** los diagramas relevantes al problema (mayormente diagramas de memoria para explicar las estructuras, pero se pueden utilizar otros diagramas si es necesario).
-
-### Por ejemplo:
-
-El programa funciona abriendo el archivo pasado como parámetro y leyendolo línea por línea. Por cada línea crea un registro e intenta agregarlo al vector. La función de lectura intenta leer todo el archivo o hasta encontrar el primer error. Devuelve un vector con todos los registros creados.
-
 <div align="center">
-<img width="70%" src="img/diagrama1.svg">
-</div>
-
-En el archivo `sarasa.c` la función `funcion1` utiliza `realloc` para agrandar la zona de memoria utilizada para conquistar el mundo. El resultado de `realloc` lo guardo en una variable auxiliar para no perder el puntero original en caso de error:
-
-```c
-int *vector = realloc(vector_original, (n+1)*sizeof(int));
-
-if(vector == NULL)
-    return -1;
-vector_original = vector;
-```
-
-
-<div align="center">
-<img width="70%" src="img/diagrama2.svg">
+    <h2 align="left">Cambios realizados:</h2>
+    <ul>
+        <li align="left">En la funcion "hospital_crear" se chequea si los punteros "pokemones" y "hospital" son NULL. A su vez se inicializan los campos de la estructura hospital, se corrigio la sintaxis de "hospital_cantidad_pokemones" a "hospital_cantidad_pokemon" y se sumaron las cantidades correspondientes.</li>
+        <li align="left">En la funcion "hospital_cantidad_entrenadores" se agrega un chequeo para verificar que el puntero "hospital" no sea NULL.</li>
+        <li align="left">En la funcion "hospital_cantidad_pokemon" nuevamente se corrigio la sintaxis de "hospital_cantidad_pokemones" a "hospital_cantidad_pokemon".</li>
+        <li align="left">En la funcion "hospital_a_cada_pokemon" se agrego un chequeo para verificar que el puntero "hospital" no sea NULL. A su vez se cambio el tipo de dato de la variable "i" de "int" a "size_t" para que asi al momento de finalizar, este devolviendo el tipo de dato esperado. En el ciclo while se cambio la condicion de corte a "i< 
+hospital->cantidad_pokemon" asi itera hasta que no haya mas pokemones. Tambien, en la funcion que se encuentra dentro del if, se le agregaron los parametros correspondientes, los cuales estaban definidos en "tp0.h", estos siendo: hospital->pokemones y "aux".</li>
+        <li align="left">En la funcion "pokemon_copiar" se cambio la condicion del if, ya que se estaba verificando si algo que no es un puntero era igual a NULL.</li>
+        <li align="left"><ul>En la funcion "hospital_aceptar_emergencias" se realizaron los siguientes cambios:
+            <li>Se creo un nuevo puntero al que se le asigno el tamaño requerido para almacenar los pokemones nuevos utilizando la funcion "malloc".</li>
+            <li>Se verifica si ese nuevo puntero es NULL.</li>
+            <li>Utilizando la funcion "memcpy", se copian los datos de los pokemones que ya estaban y los que llegan en el puntero creado anteriormente. Luego se asigna ese puntero a los pokemones del hospital.</li>
+            <li>Se libera la memoria utilizada por el puntero creado, ya que fue asignada en la estructura "hospital" y ya no es necesaria.</li>
+            <li>Se modifican la cantidad de entrenadores y de pokemones para que sea la correcta.</li>
+            </ul></li>
+    </ul>
 </div>
